@@ -1,6 +1,6 @@
 using Unity.VisualScripting;
 
-public abstract class BaseState 
+public abstract class BaseState
 {
     protected StateMachine stateMachine;
     public abstract GameStateType StateType { get; }
