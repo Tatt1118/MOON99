@@ -1,17 +1,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStateMachine : MonoBehaviour
+public class GameStateMachine
 {
     private IGameState currentState;
+    private UiManager _uiManager;
     //各ステートを登録
-    private Dictionary<GameStateType, BaseState> states = new();
+    private Dictionary<GameStateType, IGameState> states = new();
 
-    public void AddState(BaseState state)
+    public GameStateMachine(UiManager uiManager)
+    {
+        _uiManager = uiManager;
+    }
+
+    public void AddState(IGameState state)
     {
         states[state.StateType] = state;
     }
-    
+
     public void ChangeState(IGameState newState)
     {
         currentState?.Exit();

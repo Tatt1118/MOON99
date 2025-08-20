@@ -2,8 +2,8 @@ using UnityEngine;
 
 public interface IGameState
 {
-    GameStateType StateType { get; }
-    void Enter();
-    void Exit();
-    void Update();
+    public GameStateType StateType { get; }
+    public void Enter() { }
+    public void Exit() { }
+    public void Update() { }
 }

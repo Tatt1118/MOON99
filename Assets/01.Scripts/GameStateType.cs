@@ -2,7 +2,7 @@ using UnityEngine;
 
 public enum GameStateType
 {
-    ManinGame,
+    MainGame,
     Coffee,
     Character,
     Intro,
