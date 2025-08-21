@@ -30,12 +30,14 @@ Shader "Unlit/marblenoise"
             float _Distortion;
             float _Frequency;
 
+            //モデルから受け取るデータ　頂点
             struct appdata
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
             };
 
+            //頂点シェーダ⇒フラグメントシェーダに渡すデータ
             struct v2f
             {
                 float2 uv : TEXCOORD0;
