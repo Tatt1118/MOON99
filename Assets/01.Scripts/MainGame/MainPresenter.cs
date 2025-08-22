@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class MainPresenter : MonoBehaviour
+public class MainPresenter
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private readonly MainView _view;
+    private readonly MainModel _model;
+
+    public MainPresenter(MainView view, MainModel model)
     {
-        
+        _view = view;
+        _model = model;
+        _view.SetUpButton(OnCharacterClick);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnCharacterClick()
     {
-        
+        _view.DisplayText();
     }
 }

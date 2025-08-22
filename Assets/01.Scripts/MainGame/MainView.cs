@@ -1,16 +1,27 @@
+using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using R3;
 
 public class MainView : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] Button coffeeClickButton;
+    [SerializeField] Button charaClickButton;
+    [SerializeField] TextMeshProUGUI charaTMP;
+    [SerializeField] TextMeshProUGUI coffeeTMP;
+
+    public Action onClick;
+
+    public void SetUpButton(Action onClick)
     {
-        
+        charaClickButton.onClick.AddListener(() => onClick?.Invoke());
     }
 
-    // Update is called once per frame
-    void Update()
+    //テキスト表示
+    public void DisplayText()
     {
-        
+        charaTMP.gameObject.SetActive(true);
     }
+
 }
