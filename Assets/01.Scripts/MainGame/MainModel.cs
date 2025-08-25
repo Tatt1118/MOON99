@@ -13,7 +13,7 @@ public class MainModel
     /// 
     /// ・ここに、ストーリー（ScriptableObjectのDialogue）がすべて終わったら、次のストーリー（ScriptableObject）へ行くようにする
     /// 
-    /// 
+    /// そのためには、ScriptableObjectをリスト化させる
     /// </summary>
     private StoryLineSO currentLine;
 
