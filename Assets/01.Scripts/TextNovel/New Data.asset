@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9c59c19dc0a554cae26f2abe7f20de, type: 3}
   m_Name: New Data
   m_EditorClassIdentifier: 
-  stroyID: 
-  choices: []
-  dialogues: []
+  storyID: 
+  storyNumber: 0
+  choices:
+  - choiceText: 
+    nextLine: {fileID: 0}
+  dialogues:
+  - characterName: 
+    dialogue: 
+  - characterName: 
+    dialogue: 
