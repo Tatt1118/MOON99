@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1775100
 RectTransform:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1374,10 +1374,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12913f0124199c04cafaeffa1eb8ae57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coffeeClickButton: {fileID: 1841131798}
   charaClickButton: {fileID: 1118630491}
   charaTMP: {fileID: 1775102}
-  coffeeTMP: {fileID: 724056625}
+  dialogueTMP: {fileID: 1775102}
+  storyData:
+  - {fileID: 11400000, guid: 6c0c964e4668f8346958eaca0c160894, type: 2}
 --- !u!1 &1118630487
 GameObject:
   m_ObjectHideFlags: 0

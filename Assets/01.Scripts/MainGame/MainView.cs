@@ -6,22 +6,24 @@ using R3;
 
 public class MainView : MonoBehaviour
 {
-    [SerializeField] Button coffeeClickButton;
     [SerializeField] Button charaClickButton;
     [SerializeField] TextMeshProUGUI charaTMP;
-    [SerializeField] TextMeshProUGUI coffeeTMP;
+    [SerializeField] TextMeshProUGUI dialogueTMP;
+    [SerializeField] StoryLineSO[] storyData;
 
-    public Action onClick;
+    public StoryLineSO[] StoryLineSO => storyData;
 
+    // ボタン設定
     public void SetUpButton(Action onClick)
     {
+        charaClickButton.onClick.RemoveAllListeners();
         charaClickButton.onClick.AddListener(() => onClick?.Invoke());
     }
 
-    //テキスト表示
-    public void DisplayText()
+    // テキスト表示
+    public void DisplayText(string characterName, string dialogue)
     {
-        charaTMP.gameObject.SetActive(true);
+        charaTMP.text = characterName;
+        dialogueTMP.text = dialogue;
     }
-
 }

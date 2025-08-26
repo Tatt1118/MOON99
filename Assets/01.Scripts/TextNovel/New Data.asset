@@ -18,7 +18,7 @@ MonoBehaviour:
   - choiceText: 
     nextLine: {fileID: 0}
   dialogues:
-  - characterName: 
-    dialogue: 
-  - characterName: 
-    dialogue: 
+  - characterName: aaa
+    dialogue: AAAAAAAAAAAAAA
+  - characterName: nnnnn
+    dialogue: gbbbbbbbbbbbbb
