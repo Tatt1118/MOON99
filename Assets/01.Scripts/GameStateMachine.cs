@@ -34,10 +34,11 @@ public class GameStateMachine
         currentState?.Update();
     }
 
+  /// <summary>
+  /// Ÿ‚Ö”ò‚Ô‚Æ‚«‚É‚±‚ê‚ğg‚¤B
+  /// </summary>
     public void StartNovel()
     {
         ChangeState(_stateFactory.CreateNovelState(stateMachine, uiManager));
     }
-
-
 }

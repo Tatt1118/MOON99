@@ -17,13 +17,10 @@ public class GameManager : MonoBehaviour
         var _stateFactory = new StateFactory();
         _gameStateMachine = new GameStateMachine(_stateFactory, uiManager);
         _gameStateMachine.ChangeState(new MainState(_gameStateMachine, _mainPresenter));
-        Debug.Log("ok");
     }
 
     private void Update()
     {
         _gameStateMachine.Update();
-
-
     }
 }

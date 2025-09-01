@@ -17,7 +17,6 @@ public class NovelState : IGameState
     public void Enter()
     {
         _uiManager.ShowNovelUI();
-        Debug.Log("ok");
     }
     public void Update() { }
     public void Exit() { }
