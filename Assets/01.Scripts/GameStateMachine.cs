@@ -4,16 +4,17 @@ using UnityEngine;
 public class GameStateMachine
 {
     private IGameState currentState;
-    public UiManager _uiManager { get; private set; }
+    public UiManager uiManager { get; private set; }
     private StateFactory _stateFactory;
+    private GameStateMachine stateMachine;
 
     //各ステートを登録
     private Dictionary<GameStateType, IGameState> states = new();
 
-    public GameStateMachine(StateFactory stateFactory, UiManager uiManager)
+    public GameStateMachine(StateFactory stateFactory, UiManager ui)
     {
         _stateFactory = stateFactory;
-        _uiManager = uiManager;
+        uiManager = ui;
     }
 
     public void AddState(IGameState state)
@@ -35,7 +36,7 @@ public class GameStateMachine
 
     public void StartNovel()
     {
-        ChangeState(_stateFactory.CreateNovelState(this));
+        ChangeState(_stateFactory.CreateNovelState(stateMachine, uiManager));
     }
 
 

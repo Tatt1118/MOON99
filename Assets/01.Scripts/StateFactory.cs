@@ -7,15 +7,16 @@ public class StateFactory
     private readonly UiManager uiManager;
     private MainView mainView;
     private MainModel mainModel;
+    private MainPresenter mainPresenter;
 
     public IGameState CreateMainState(GameStateMachine gm)
     {
-        return new MainState(gm);
+        // var mainPresenter = new MainPresenter(mainView, mainModel);
+        return new MainState(gm, mainPresenter);
     }
 
-    public IGameState CreateNovelState(GameStateMachine gm)
+    public IGameState CreateNovelState(GameStateMachine gm, UiManager ui)
     {
-        return new NovelState(gm);
+        return new NovelState(gm, ui);
     }
-
 }

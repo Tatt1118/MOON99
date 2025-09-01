@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         _mainPresenter = new MainPresenter(_mainView, _mainModel);
         var _stateFactory = new StateFactory();
         _gameStateMachine = new GameStateMachine(_stateFactory, uiManager);
-        _gameStateMachine.ChangeState(new MainState(_gameStateMachine));
+        _gameStateMachine.ChangeState(new MainState(_gameStateMachine, _mainPresenter));
         Debug.Log("ok");
     }
 

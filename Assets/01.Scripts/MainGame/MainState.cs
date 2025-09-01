@@ -7,27 +7,29 @@ public class MainState : IGameState
 {
     public GameStateType StateType => GameStateType.MainGame;
     private readonly MainPresenter _mainPresenter;
-    private readonly GameStateMachine _gameStateMachine;
+    private GameStateMachine _gameStateMachine;
     private NovelState _novelState;
     private readonly NovelPresenter _novelPresenter;
     private StateFactory stateFactory;
+    private readonly CompositeDisposable _disposables = new CompositeDisposable();
 
-    public MainState(GameStateMachine gm)
+
+    public MainState(GameStateMachine gm, MainPresenter presenter)
     {
         this._gameStateMachine = gm;
+        _mainPresenter = presenter;
     }
 
     public void Enter()
     {
         Debug.Log("Main");
-        _gameStateMachine.UiManager.ShowMainUI();
+        _gameStateMachine.uiManager.ShowMainUI();
         _mainPresenter.OnState
             .Subscribe(_ =>
             {
                 _gameStateMachine.StartNovel();
             })
-        .AddTo(this);
-
+        .AddTo(_disposables);
 
     }
 

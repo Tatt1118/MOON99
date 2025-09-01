@@ -8,9 +8,10 @@ public class NovelState : IGameState
     private readonly NovelPresenter _novelPresenter;
     private GameStateMachine _gameStateMachine;
 
-    public NovelState(GameStateMachine gm)
+    public NovelState(GameStateMachine gm, UiManager ui)
     {
-        this._gameStateMachine = gm;
+        _gameStateMachine = gm;
+        _uiManager = ui;
     }
 
     public void Enter()
