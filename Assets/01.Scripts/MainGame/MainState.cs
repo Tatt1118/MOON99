@@ -1,21 +1,33 @@
 using System;
 using UnityEngine;
+using R3;
+using Cysharp.Threading.Tasks;
 
 public class MainState : IGameState
 {
     public GameStateType StateType => GameStateType.MainGame;
-    private readonly UiManager _uiManager;
     private readonly MainPresenter _mainPresenter;
+    private readonly GameStateMachine _gameStateMachine;
+    private NovelState _novelState;
+    private readonly NovelPresenter _novelPresenter;
+    private StateFactory stateFactory;
 
-    public MainState(MainPresenter presenter, UiManager uiManager)
+    public MainState(GameStateMachine gm)
     {
-        _uiManager = uiManager;
-        _mainPresenter = presenter;
+        this._gameStateMachine = gm;
     }
 
     public void Enter()
     {
-        _uiManager.ShowMainUI();
+        Debug.Log("Main");
+        _gameStateMachine.UiManager.ShowMainUI();
+        _mainPresenter.OnState
+            .Subscribe(_ =>
+            {
+                _gameStateMachine.StartNovel();
+            })
+        .AddTo(this);
+
 
     }
 

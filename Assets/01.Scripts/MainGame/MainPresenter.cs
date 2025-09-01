@@ -1,10 +1,15 @@
 using UnityEngine;
 using R3;
+using System;
 
 public class MainPresenter
 {
     private readonly MainView _view;
     private readonly MainModel _model;
+    private readonly UiManager _uiManager;
+
+    private Subject<Unit> _onChangeState = new();
+    public Observable<Unit> OnState => _onChangeState;
 
     public MainPresenter(MainView view, MainModel model)
     {
@@ -30,8 +35,13 @@ public class MainPresenter
             });
     }
 
+
+
+
     public void OnCharacterClick()
     {
+        _onChangeState.OnNext(Unit.Default);
+
         // Ÿ‚ÌƒZƒŠƒt‚Öi‚Ş
         if (!_model.NextLine())
         {
