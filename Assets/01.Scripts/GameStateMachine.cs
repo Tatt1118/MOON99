@@ -34,9 +34,9 @@ public class GameStateMachine
         currentState?.Update();
     }
 
-  /// <summary>
-  /// 次へ飛ぶときにこれを使う。
-  /// </summary>
+    /// <summary>
+    /// 次へ飛ぶときにこれを使う。
+    /// </summary>
     public void StartNovel()
     {
         ChangeState(_stateFactory.CreateNovelState(stateMachine, uiManager));

@@ -6,7 +6,7 @@ using Cysharp.Threading.Tasks;
 public class MainState : IGameState
 {
     public GameStateType StateType => GameStateType.MainGame;
-    private readonly MainPresenter _mainPresenter;
+    private MainPresenter _mainPresenter;
     private GameStateMachine _gameStateMachine;
     private NovelState _novelState;
     private readonly NovelPresenter _novelPresenter;
@@ -16,7 +16,7 @@ public class MainState : IGameState
 
     public MainState(GameStateMachine gm, MainPresenter presenter)
     {
-        this._gameStateMachine = gm;
+        _gameStateMachine = gm;
         _mainPresenter = presenter;
     }
 
