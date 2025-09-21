@@ -19,8 +19,7 @@ public class GameManager : MonoBehaviour
         _gameStateMachine.ChangeState(new MainState(_gameStateMachine, _mainPresenter));
     }
 
-    private void Update()
-    {
+    private void Update(){
         _gameStateMachine.Update();
     }
 }
